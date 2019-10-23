@@ -1,0 +1,250 @@
+.index_title {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+
+  >.index_title_left {
+    height: 10px;
+    width: 2px;
+    background-color: @colorRed;
+    display: inline-block;
+    border-radius: 15px;
+    margin-right: 4px;
+  }
+
+  >.index_title_right {
+    flex: 1;
+    text-align: right;
+    color: @color9;
+
+    >img {
+      margin-left: 6px;
+    }
+  }
+}
+
+.header {
+  padding: 12px 16px;
+}
+
+.box {
+  padding: 0px 16px 16px 16px;
+
+  >.box_son {
+    box-shadow: @shadow;
+    border-radius: 6px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+}
+
+.channel_myChannel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  >h3 {
+    color: @color3;
+    display: inline-block;
+
+    >span {
+      color: @color9;
+      margin-left: 6px;
+      .font-12;
+    }
+  }
+
+  >span {
+    .hw(24px, 60px);
+    color: @colorRed;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 22px;
+    border: @borderRed;
+  }
+}
+
+.applicationTitle {
+  margin-bottom: 11px;
+  position: relative;
+  .hw(24px, 100%);
+
+  >h3 {
+    color: @color3;
+    text-align: center;
+    flex: 1;
+    line-height: 24px;
+  }
+
+  >.backicon {
+    .hw(15px);
+    .bgsp;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+}
+
+.channel_mode {
+  .font-15;
+  color: @color3;
+  border-radius: 3px;
+  background-color: @colorF0;
+  line-height: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.flex-space {
+  width: 100%;
+  transition: all 0.2s;
+
+  >ul {
+    width: 100%;
+    display: flex;
+
+    position: relative;
+    flex-wrap: wrap;
+
+    >li {
+      width: 25%;
+      margin-bottom: 12px;
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      z-index: 10;
+
+      >div {
+        width: 88%;
+      }
+    }
+
+  }
+
+}
+
+.tj {
+  >ul {
+    >li:nth-of-type(1) {
+      >div {
+        background-color: @colorW;
+        border: @borderF0;
+      }
+
+    }
+  }
+}
+
+// .headeHp {
+//   padding-top: 46px;
+//   padding-left: 18px;
+
+//   >h3 {
+//     .hw(56px, 170px);
+//     color: @colorW;
+//     font-family: PingFangSC-Semibold, sans-serif;
+//   }
+
+//   >p {
+//     .hw(37px, 180px);
+//     color: @colorW;
+//     padding-top: 6px;
+//     line-height: 1.5;
+//   }
+// }
+
+.overflowScroll-y {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.p_1 {
+  color: @color6;
+  line-height: 24px;
+  margin-bottom: 15px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.delete {
+  .hw(16px);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  >img {
+    .hw(100%)
+  }
+}
+
+//margin
+.marginTop30 {
+  margin-top: 30px;
+}
+
+//font
+.font-12 {
+  font-size: 12px;
+  /*no*/
+}
+
+.font-14 {
+  font-size: 14px;
+  /*no*/
+}
+
+.font-15 {
+  font-size: 15px
+    /*no*/
+  ;
+
+}
+
+.font-16 {
+  font-size: 16px !important;
+   /**no**/
+}
+
+.font-17 {
+  font-size: 17px ;  /**no**/
+ 
+}
+
+.font-13 {
+  font-size: 13px;
+  /**no**/
+}
+
+.font-20 {
+  font-size: 20px;
+   /**no**/
+}
+
+.font-18 {
+  font-size: 18px;
+  /**no**/
+}
+.font-22 {
+  font-size: 22px;
+  /**no**/
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.familyMedium {
+  font-family: PingFangSC-Medium, sans-serif;
+}
+
+//color
+.color9 {
+  color: @color9;
+}

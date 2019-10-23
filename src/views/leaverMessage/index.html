@@ -1,0 +1,40 @@
+<div class="leaverMessage">
+    <main class="leaverMessage_main">
+      <section>
+        <van-field
+          v-model="userName"
+          label="您的称呼"
+          type="textarea"
+          placeholder="请输入您的称呼"
+          rows="1"
+          autosize
+        />
+      </section>
+      <section>
+        <van-field
+          v-model="phoneNum"
+          label="手机号码"
+          type="textarea"
+          placeholder="请输入您的手机号码"
+          rows="1"
+          autosize
+        />
+      </section>
+      <section class="Remarks">
+        <van-field
+          v-model="msgContent"
+          label="留言内容"
+          type="textarea"
+          placeholder="备注"
+          rows="1"
+          autosize
+          clearable
+        />
+      </section>
+    </main>
+    <footer class="leaverMessage_footer">
+      <div class="sure Bold">
+        <van-button type="primary" size="large" @click="submitRemarks">确定</van-button>
+      </div>
+    </footer>
+  </div>

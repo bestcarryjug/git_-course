@@ -1,0 +1,63 @@
+
+.leaverMessage {
+  .font-16;
+ .hw(100%);
+  overflow: hidden;
+  box-sizing: border-box;
+  > .leaverMessage_main {
+    border-top: 2px solid @colorF;
+    .van-cell {
+      .font-16;
+    }
+    > .Remarks {
+      .van-field {
+        min-height: 166px;
+        .van-cell__title,
+        .van-field__body {
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+          margin: 14px 0;
+          margin-right: 14px;
+        }
+      }
+    }
+    padding: 0 16px;
+    .van-field {
+      padding: 0;
+      min-height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid @colorF;
+      > .van-field__label {
+        width: auto;
+        margin-right: 14px;
+        font-family: PingFangSC-Medium, sans-serif;
+        font-weight: 700;
+        >span{
+          line-height: 1;
+        }
+      }
+      .van-cell__title,
+      .van-field__body {
+        min-height: 100%;
+      }
+      .van-cell__title {
+        line-height: 50px;
+        color: #333;
+      }
+      .van-field__body {
+        .van-field__control {
+          color: #999;
+        }
+      }
+    }
+  }
+  > .leaverMessage_footer {
+    padding: 41px 16px 0;
+    .van-button--primary {
+      background-color: @colorRed;
+      border: none;
+      border-radius: 6px;
+    }
+  }
+}

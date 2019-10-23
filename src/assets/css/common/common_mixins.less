@@ -1,0 +1,70 @@
+.hw(@h, @w: @h) {
+  height: @h;
+  width: @w;
+}
+.hl(@h,@l:@h){
+  height: @h;
+  line-height: @l;
+}
+.bgsp(@sizex:100%,@sizey:@sizex,@positionx:center,@positiony:@positionx){
+  background-size: @sizex @sizey;
+  background-position: @positionx @positiony;
+}
+.scopemix(@height: 75px, @kefthw: 64px, @borde: none, @pdtop: 8px, @pdbottom: 6px,@paddingbottom:0px) {
+  height: @height;
+  display: flex;
+  position: relative;
+  padding-bottom: @paddingbottom;
+
+  // align-items: center;
+  >.section_left {
+    font-size: 0;
+    height: @kefthw;
+    width: @kefthw;
+    margin-right: 11px;
+    >img {
+      .hw(100%);
+    }
+  }
+
+  >.section_right {
+    flex: 1;
+    border-bottom: @borde;
+    height: 100%;
+
+    >h3 {
+      color: @color3;
+      margin-top: @pdtop;
+      margin-bottom: @pdbottom;
+     .hl(24px);
+     width:168px;
+    }
+
+    >p {
+      color: @color9;
+      .hl(18px);
+      width:168px;
+    }
+  }
+
+  >.get {
+    display: block;
+    height: 33px;
+    width: 60px;
+    border-radius: 15px;
+    background-color: RGBA(252, 240, 235, 1);
+    position: absolute;
+    right:0;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 33px;
+    text-align: center;
+    color: @colorRed;
+  }
+}
+
+.placeholder(@color:#999,@size:14px) {
+  color: @color;
+  font-size: @size;
+}
+

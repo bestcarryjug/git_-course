@@ -1,0 +1,148 @@
+.fontcommon {
+  .font-14;
+  line-height: 20px;
+  color: #333;
+}
+
+.datils {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+
+  >.datils_header {
+    // height: 30px;
+    // padding: 0 16px;
+  }
+
+  >.datils_main {
+    padding: 0 16px;
+
+    >.sections {
+      // padding: 15px;
+      height: 104px;
+      display: flex;
+      border-bottom: 1px solid @colorF;
+
+      >.section_left {
+        .hw(88px);
+        font-size: 0;
+        margin-right: 15px;
+
+        >img {
+          .hw(100%);
+        }
+      }
+
+      >.section_right {
+        display: flex;
+        flex-direction: column;
+        height: 88px;
+        flex: 1;
+
+        >h3 {
+          color: #333;
+          .font-22;
+          padding-top: 3px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+
+        >p {
+          .font-14;
+          color: #999;
+          line-height: 1.2;
+        }
+
+        >p:last-child {
+          margin-top: auto;
+          text-decoration: underline;
+          .font-12;
+          display: flex;
+          justify-content: space-between;
+
+          >span:first-child {
+            >img {
+              height: 100%;
+            }
+          }
+
+          >span:last-child {
+            width: 15px;
+            height: 12px;
+            display: inline-block;
+
+            >img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    >.title {
+      padding-top: 16px;
+      padding-bottom: 6px;
+      display: flex;
+
+      >h3 {
+        color: #333;
+        .font-17;
+        font-weight: 700;
+        padding-left: 6px;
+      }
+
+      >i {
+        width: 4px;
+        height: 10px;
+        display: inline-block;
+        background-color: @colorRed;
+        border-radius: 1px;
+        margin: auto 0;
+      }
+    }
+
+    >.school_list {
+      margin-bottom: 16px;
+      border-bottom: 1px solid @colorF;
+
+      >ul {
+        >li {
+          .fontcommon;
+        }
+      }
+
+      >p {
+        .fontcommon;
+      }
+    }
+
+    >.datilsection_bottom {
+      border-bottom: 1px solid @colorF;
+    }
+  }
+
+  >.datils_footer {
+    padding: 0 16px;
+
+    >.datils_footer_list {
+      padding-bottom: 50px;
+      widows: 100%;
+      overflow-y: auto;
+
+      >ul {
+        display: flex;
+
+        >li {
+          margin-right: 6px;
+          flex: none;
+          height: 269px;
+
+          >img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.index {
+  .hw(100%);
+ 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  >.index_main {
+    // padding: 0 15px;
+    overflow-y: hidden;
+    flex: 1;
+    position: relative;
+
+    >.index_main_pdlist {
+      height: 14px;
+      width: 46px;
+      background-color: transparent;
+      position: absolute;
+      right: 5px;
+      top: 15px;
+      z-index: 100;
+
+      >img {
+        .hw(100%)
+      }
+    }
+
+    .van-tabs {
+      height: 100%;
+
+      .van-tabs__content {
+        height: -webkit-calc(100% - 38px);
+        height: calc(100% - 38px);
+        .overflowScroll-y;
+        position: relative;
+
+      }
+    }
+
+    .van-tabs--line .van-tabs__wrap {
+      height: 42px;
+      padding: 0 9px;
+      margin-bottom: 11px;
+
+      .van-tab {
+        .font-14;
+        color: @color9;
+        flex-basis: 14.28% !important;
+
+        >.van-ellipsis {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          line-height: 45px;
+        }
+
+      }
+
+      .van-tab--active {
+        color: @colorRed;
+        .font-17;
+      }
+    }
+
+    .van-tabs__wrap>.van-tabs__nav>.van-tabs__line {
+      width: 16px !important;
+      height: 3px;
+      background-color: @colorRed;
+      border-radius: 2px;
+    }
+
+    .van-hairline--top-bottom::after {
+      border: none;
+      border-bottom: 2px solid @colorF8;
+    }
+
+    .van-tab__pane {
+      >.sections {
+        padding: 0 16px;
+      }
+
+    }
+  }
+
+  .leavingmessage {
+    background-image: url('../../assets/images/leavingmessage.png');
+    height: 74px;
+    width: 74px;
+    position: absolute;
+    background-position: center;
+    background-size: 100%;
+    right: 8px;
+    bottom: 86px;
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,58 @@
+
+  <div class="datils" v-if="params">
+    <main class="datils_main">
+      <div class="sections">
+        <div class="section_left">
+          <img :src="params.appIcon" alt />
+        </div>
+        <div class="section_right">
+          <h3 class='Bold'>{{params.appName}}</h3>
+          <p>{{params.appDescription}}</p>
+          <p>
+            <span class="height20">
+              <a :href='params.appDemoPreviewUrl'><img  class="height20" src="../../assets/images/sy.png" alt /></a>
+            </span>
+            <span>
+              <img src="../../assets/images/分享.png" alt />
+            </span>
+          </p>
+        </div>
+      </div>
+      <section
+        :class="[index == 0?'paddingtop16':'']"
+        v-for="(item, index) in params.previewList"
+        :key="index"
+      >
+        <datilsection
+          :params="{'compatibilityName':item.compatibilityName,'resourceList': item.resourceList,'open':index==0?true:false,'height':index==1?'152px':'269px'}"
+        ></datilsection>
+      </section>
+      <section class="school_list paddingtop16">
+        <p class="gmoure paddingbottom16" v-html="params.appFunctionIntroduction"></p>
+      </section>
+
+      <section class="title">
+        <i></i>
+        <h3 class='Bold'>信息</h3>
+      </section>
+      <section class="datilsection_bottom">
+        <datilinformation :params="{'title':'类别','list':[params.info.categoryName]}"></datilinformation>
+        <datilinformation :params="{'title':'兼容性','list':params.info.compatibilityList}"></datilinformation>
+        <datilinformation :params="{'title':'语言','list':params.info.languageList}"></datilinformation>
+        <datilinformation :params="{'title':`学校${params.schoolUsedNum}所`,'list':params.schoolList}"></datilinformation>
+      </section>
+      <section class="title">
+        <i></i>
+        <h3 class='Bold'>质量报告</h3>
+      </section>
+    </main>
+    <footer class="datils_footer">
+      <section class="datils_footer_list" v-if='params.qualityReportList.length'>
+        <ul>
+          <li v-for="(item,index) in params.qualityReportList" @click="getResourceUrl(index)" :key="index" >
+            <img :src="item" alt />
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </div>

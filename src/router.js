@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const router = new Router({
-    mode: 'history',
+    // mode: 'history',
     base: process.env.BASE_URL,
     routes: [{
         path: '/',
@@ -25,6 +25,30 @@ const router = new Router({
         path: '/search_detail/:value',
         name: 'search_detail',
         component: () => import('./views/search/search_detail.vue')
+    },
+    {
+        path: '/datils/:appCode',
+        name: 'datils',
+        component: () => import('./views/datils/index.vue'),
+        meta: {
+            title: ''
+        }
+    },
+    {
+        path: '/leaverMessage',
+        name: 'leaverMessage',
+        component: () => import('./views/leaverMessage/index.vue'),
+        meta: {
+            title: ''
+        }
+    },
+    {
+        path: '/error',
+        name: 'error',
+        component: () => import('./views/error/error.vue'),
+        meta: {
+            title: ''
+        }
     },
     {
         path: '/entrance_title',
@@ -64,22 +88,6 @@ const router = new Router({
             component: () => import('./views/icon_all/icon_all.vue'),
             meta: {
                 title: '校园主题应用'
-            }
-        },
-        {
-            path: '/leaverMessage',
-            name: 'leaverMessage',
-            component: () => import('./views/leaverMessage/index.vue'),
-            meta: {
-                title: ''
-            }
-        },
-        {
-            path: '/datils/:appCode',
-            name: 'datils',
-            component: () => import('./views/datils/index.vue'),
-            meta: {
-                title: ''
             }
         }
 

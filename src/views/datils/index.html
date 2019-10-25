@@ -1,12 +1,13 @@
 
   <div class="datils" v-if="params">
+    <header><application></application></header>
     <main class="datils_main">
       <div class="sections">
         <div class="section_left">
           <img :src="params.appIcon" alt />
         </div>
         <div class="section_right">
-          <h3 class='Bold'>{{params.appName}}</h3>
+          <h3 class='Bold van-ellipsis'>{{params.appName}}</h3>
           <p>{{params.appDescription}}</p>
           <p>
             <span class="height20">

@@ -1,15 +1,5 @@
 <template>
   <div class="scrollicon">
-    <ul class="scrollicon_ul" ref="scrollicon_ul" v-if="!appIcon.length">
-      <li v-for="index in 10" :key="index">
-        <div class="imgbox">
-          <img src="../../assets/images/Mask 2 Copy@3x.png" alt />
-        </div>
-        <div class="imgbox">
-          <img src="../../assets/images/Mask 2 Copy@3x.png" alt />
-        </div>
-      </li>
-    </ul>
     <ul class="scrollicon_ul" ref="scrollicon_ul" v-if="appIcon.length">
       <li v-for="(item,index) in appIcon" :key="index">
         <div class="imgbox">
@@ -42,9 +32,9 @@ export default {
     methods: {
         getIcon() {
             let params = [];
-            if (this.params.length < 10) {
-                return;
-            }
+            // if (this.params.length < 10) {
+            //     return;
+            // }
             params =
         this.params.length % 2 === 0
             ? this.params
@@ -55,7 +45,9 @@ export default {
                 }
                 return this.appIcon.push([params[index].appIcon, params[index + 1].appIcon]);
             });
-            this.appIcon = [...this.appIcon, ...this.appIcon]
+            while (this.appIcon.length <= 10) {
+                this.appIcon = [...this.appIcon, ...this.appIcon]
+            }
         }
     },
     props: ['params']
@@ -68,7 +60,7 @@ export default {
     height: 100%;
     display: flex;
     justify-content: space-between;
-    animation: 10s scroll linear infinite normal;
+    animation: 20s scroll linear infinite normal;
     > li {
       display: flex;
       flex-direction: column;

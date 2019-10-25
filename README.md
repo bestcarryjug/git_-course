@@ -13,7 +13,13 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
+qa测试环境
+
+npm run qa
+qa测试环境
+
+npm run prod
+线上环境
 
 ### Run your tests
 ```

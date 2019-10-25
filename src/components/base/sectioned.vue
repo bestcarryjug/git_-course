@@ -7,7 +7,7 @@
       <h3   class="Bold font-16 regular van-ellipsis">{{params.appName}}</h3>
       <p class="van-ellipsis">{{params.appDescription}}</p>
     </div>
-    <a class="get font-13" href="javascript: void(0);" @click="$router.push({path:`/datils/${params.appCode }`})">查看</a>
+    <a class="get font-13" href="javascript: void(0);" @click="$router.push({path:`/datils/${params.appCode}`})">查看</a>
   </div>
 </template>
 <script>

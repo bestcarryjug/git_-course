@@ -27,6 +27,7 @@ axios.interceptors.response.use(response => {
 
     // 请求失败成功统一判断处
 }, function (error) {
+    window.location.hash = '/error'
     return Promise.reject(error)
 })
 export default $axios

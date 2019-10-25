@@ -72,7 +72,6 @@ export default {
       > .titleAppaction_header_sec {
         .hw(200px, 100%);
         .bgsp(110%, 110%, center);
-        background-image: url("../../assets/images/IMG_3826 Copy@3x.png");
       }
     }
     > .titleAppaction_main {

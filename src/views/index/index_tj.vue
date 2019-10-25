@@ -71,8 +71,6 @@ export default {
     > .heade {
       .hw(200px, 100%);
       .bgsp();
-      // .headeHp;
-      background-image: url("../../assets/images/IMG_3826 Copy@3x.png");
     }
   }
   .index_tj_mode {
@@ -86,7 +84,6 @@ export default {
   .index_tj_footer {
     .bgsp();
     height: 180px;
-    background-image: url("../../assets/images/footer.jpg");
   }
 }
 </style>

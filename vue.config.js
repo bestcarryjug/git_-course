@@ -53,5 +53,9 @@ module.exports = {
         config.resolve.alias
             .set('images', resolve('src/assets/images'))
             .set('css', resolve('src/assets/css'))
-    }
+    },
+    publicPath: './',
+    outputDir: 'dist',
+    assetsDir: './static'
+
 }

@@ -9,7 +9,7 @@
       <main class="icon_all_main">
         <p class="font-16 p_1" v-html='params.themeIntroduction'>校园主题应用说明校园主题应用说明校园主题应用说明校园主题应用说明校园主题应用说明校园主题应用说明</p>
         <section class="icon_all_main_section" v-for="(item,index) in params.itemList" :key='index'>
-          <sectioned :className="index==3?'section':'sectionboder'" :params='item'></sectioned>
+          <sectioned :className="index==params.itemList.length-1?'section':'sectionboder'" :params='item'></sectioned>
         </section>
       </main>
     </div>

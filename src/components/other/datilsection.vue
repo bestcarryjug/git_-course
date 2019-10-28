@@ -29,30 +29,30 @@
 </template>
 <script>
 export default {
-  data () {
-    return {
-      rotate: this.params.open,
-      resourceUrl: []
+    data () {
+        return {
+            rotate: this.params.open,
+            resourceUrl: []
+        }
+    },
+    props: {
+        params: {
+            type: Object
+        }
+    },
+    created () {
+        this.resourceUrl = this.params.resourceList.map(item => {
+            return item.resourceUrl
+        })
+    },
+    methods: {
+        getResourceUrl (index) {
+            this.$ImagePreview({
+                startPosition: index,
+                images: this.resourceUrl
+            })
+        }
     }
-  },
-  props: {
-    params: {
-      type: Object
-    }
-  },
-  created () {
-    this.resourceUrl = this.params.resourceList.map(item => {
-      return item.resourceUrl
-    })
-  },
-  methods: {
-    getResourceUrl (index) {
-      this.$ImagePreview({
-        startPosition: index,
-        images: this.resourceUrl
-      })
-    }
-  }
 }
 </script>
 <style lang="less">

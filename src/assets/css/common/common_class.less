@@ -88,6 +88,17 @@
   }
 }
 
+.user {
+  .hw(30px);
+  display: inline-block;
+  flex: none;
+  margin-right: 10px;
+
+  >img {
+    .hw(100%);
+  }
+}
+
 .channel_mode {
   .font-15;
   color: @color3;
@@ -185,6 +196,31 @@
   margin-top: 30px;
 }
 
+.marginTop158 {
+  margin-top: 158px;
+}
+
+.marginTop50 {
+  margin-top: 50px;
+}
+
+.marginTop98 {
+  margin-top: 98px;
+}
+
+//padding
+.paddingLeft40 {
+  padding-left: 40px;
+}
+
+.paddingLeft20 {
+  padding-left: 20px;
+}
+
+.paddingTop16 {
+  padding-Top: 16px;
+}
+
 //font
 .font-12 {
   font-size: 12px;
@@ -205,12 +241,13 @@
 
 .font-16 {
   font-size: 16px !important;
-   /**no**/
+  /**no**/
 }
 
 .font-17 {
-  font-size: 17px ;  /**no**/
- 
+  font-size: 17px;
+  /**no**/
+
 }
 
 .font-13 {
@@ -220,13 +257,14 @@
 
 .font-20 {
   font-size: 20px;
-   /**no**/
+  /**no**/
 }
 
 .font-18 {
   font-size: 18px;
   /**no**/
 }
+
 .font-22 {
   font-size: 22px;
   /**no**/
@@ -248,3 +286,124 @@
 .color9 {
   color: @color9;
 }
+
+//vant
+
+.van-hairline--top-bottom::after {
+  border: none;
+  border-bottom: 2px solid @colorF8;
+}
+
+//input
+.myInput {
+  border-bottom: 1px solid @colorF8;
+  height: 70px;
+
+  >input {
+    outline: none;
+    border: none;
+  }
+}
+
+//position
+
+.relative {
+  position: relative;
+}
+
+
+//login forgetPassword
+.myInput {
+  border-bottom: 1px solid @colorF8;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+
+  >input {
+    outline: none;
+    border: none;
+    height: 100%;
+    .font-16;
+    font-size: 16px;
+    color: @color9;
+    flex: 1;
+
+    &::-webkit-input-placeholder {
+      .placeholder(@size: 16px);
+    }
+
+    &:-moz-placeholder {
+      .placeholder(@size: 16px);
+    }
+
+    &::-moz-placeholder {
+      .placeholder(@size: 16px);
+    }
+
+    &:-ms-input-placeholder {
+      .placeholder(@size: 16px);
+    }
+  }
+}
+
+.loginicon {
+  .hw(16px, 20px);
+  display: inline-block;
+
+  >img {
+    .hw(100%);
+  }
+}
+
+.forget {
+  .font-16;
+  color: @color9;
+  margin: 50px auto 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.sendCode {
+  .hw(30px, 93px);
+  background-color: @colorRed;
+  text-align: center;
+  line-height: 30px;
+  .font-13;
+  color: @colorW;
+  border-radius: 2px;
+  padding: 0;
+  border: none;
+}
+
+.errorMessage {
+  .font-12;
+  color: @colorRed;
+}
+
+//button
+
+.button {
+  height: 48px;
+  outline: none;
+  border: none;
+  background-color: @colorRed;
+  color: @colorW;
+  .font-16;
+  line-height: 48px;
+  letter-spacing: 5px;
+  border-radius: 2px;
+  width: 100%;
+  // display: block;
+}
+//flex
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+}
+

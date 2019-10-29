@@ -17,6 +17,21 @@ const router = new Router({
     },
 
     {
+        path: '/login',
+        name: 'login',
+        component: () => import('./views/login/login.vue')
+    },
+    {
+        path: '/forgetPassword',
+        name: 'forgetPassword',
+        component: () => import('./views/forgetPassword/forgetPassword.vue')
+    },
+    {
+        path: '/updatePassword',
+        name: 'updatePassword',
+        component: () => import('./views/forgetPassword/updatePassword.vue')
+    },
+    {
         path: '/search',
         name: 'search',
         component: () => import('./views/search/search.vue')

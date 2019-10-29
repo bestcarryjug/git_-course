@@ -1,9 +1,13 @@
-  <div class="index" >
+  <div class="index">
     <header class="index_header">
-      <headerSearch></headerSearch>
+      <headerSearch>
+        <template slot='headerSearch_left'>
+          <span class='user'><img src="../../assets/images/用户名@3x.png" alt=""></span>
+        </template>
+      </headerSearch>
     </header>
     <main class="index_main">
-      <!-- <div class='index_main_pdlist' @click='show=true'><img src="../../assets/images/yylist.jpg" alt=""></div> -->
+      <div class='index_main_pdlist' @click='show=true'><img src="../../assets/images/yylist.jpg" alt=""></div>
       <van-tabs v-model="active" animated @change="changeTab" swipeable>
         <van-tab v-for="(item,index) in params" :title="item.channelName" :key="index">
           <div v-if='paramsyy.length'>

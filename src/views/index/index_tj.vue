@@ -7,6 +7,27 @@
 
     <section class="app" v-if='params.themeType=="app"'>
       <div class="box">
+        <div class="box_son paddingTop16">
+          <!-- <h3 class="index_title font-14 regular">
+            <span class="index_title_left"></span>
+            <span class="index_title_center font-14">{{params.themeName}}</span>
+            <span class="index_title_right" @click="$router.push(`/allApplications/${params.themeCode}`)">
+              查看全部
+              <img src="../../assets/images/more.jpg" alt />
+            </span>
+          </h3> -->
+          <div class="index_tj_mode">
+            <ul>
+              <li v-for="(item,index) in params.appList" :key="index">
+                <sectioned :className="index==(params.appList.length-1)?'section67':'section67boder'" :params='item'></sectioned>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+      <section class="app" v-if='params.themeType=="rec"'>
+      <div class="box">
         <div class="box_son">
           <h3 class="index_title font-14 regular">
             <span class="index_title_left"></span>

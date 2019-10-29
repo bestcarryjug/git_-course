@@ -4,6 +4,6 @@
 <script src='./index.js'>
 
 </script>
-<style lang='less' src='./index.less'>
+<style lang='less' src='./index.less' scope>
 
 </style>

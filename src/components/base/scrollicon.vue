@@ -32,9 +32,6 @@ export default {
     methods: {
         getIcon() {
             let params = [];
-            // if (this.params.length < 10) {
-            //     return;
-            // }
             params =
         this.params.length % 2 === 0
             ? this.params
@@ -60,7 +57,9 @@ export default {
     height: 100%;
     display: flex;
     justify-content: space-between;
-    animation: 20s scroll linear infinite normal;
+    animation: 3s scroll linear infinite normal;
+    -moz-animation:3s scroll linear infinite normal;
+    -o-animation:3s scroll linear infinite normal;
     > li {
       display: flex;
       flex-direction: column;
@@ -82,11 +81,14 @@ export default {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    -o-transform:translate3d(0, 0, 0);
   }
   100% {
     -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
-    display: none;
+    -moz-transform:translate3d(-50%, 0, 0);
+    -o-transform:translate3d(-50%, 0, 0);
   }
 }
 </style>

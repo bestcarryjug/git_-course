@@ -24,9 +24,13 @@ export default {
     },
     mounted() {
         this.$nextTick(() => {
-            const ul = this.$refs.scrollicon_ul;
-            const list = [...ul.childNodes];
-            ul.style.width = list[0].offsetWidth * list.length + 'px';
+            let fn = () => {
+                const ul = this.$refs.scrollicon_ul;
+                const list = [...ul.childNodes];
+                ul.style.width = (list[0].offsetWidth * list.length) + 'px';
+                console.log(ul.offsetWidth)
+            }
+            setTimeout(fn, 0);
         });
     },
     methods: {
@@ -53,21 +57,26 @@ export default {
 <style lang="less" scope>
 .scrollicon {
   // padding: 0 15px;
-  > .scrollicon_ul {
+  width: 100%;
+  > ul {
     height: 100%;
     display: flex;
-    justify-content: space-between;
-    animation: 3s scroll linear infinite normal;
-    -moz-animation:3s scroll linear infinite normal;
-    -o-animation:3s scroll linear infinite normal;
+    // width: auto;
+    // justify-content: space-between;
+    animation:10s scroll linear infinite normal;
+    -moz-animation:10s  scroll linear infinite normal;
+    -o-animation:10s scroll linear infinite normal;
+    -webkit-animation: 10s  scroll linear infinite normal;
     > li {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
+      flex: none;
+      width: 74px;
       > .imgbox {
         .hw(64px);
         margin-bottom: 15px;
-        margin-right: 10px;
+        // margin-right: 10px;
         overflow: hidden;
         > img {
           .hw(100%);
@@ -79,16 +88,30 @@ export default {
 }
 @keyframes scroll {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -moz-transform:translate3d(0, 0, 0);
-    -o-transform:translate3d(0, 0, 0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform:translateX(0);
+    -o-transform:translateX(0);
   }
   100% {
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
-    -moz-transform:translate3d(-50%, 0, 0);
-    -o-transform:translate3d(-50%, 0, 0);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
+  }
+}
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform:translateX(0);
+    -o-transform:translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
   }
 }
 </style>

@@ -39,14 +39,15 @@
         flex-direction: column;
         height: 88px;
         flex: 1;
-        
         >h3 {
           color: #333;
           .font-22;
           padding-top: 3px;
           font-weight: 700;
           line-height: 1.2;
-          width: 200px;
+          width: 250px;
+          overflow: hidden;
+          padding-bottom: 10px;
         }
 
         >p {
@@ -55,29 +56,29 @@
           line-height: 1.2;
         }
 
-        >p:last-child {
-          margin-top: auto;
-          text-decoration: underline;
-          .font-12;
-          display: flex;
-          justify-content: space-between;
+        // >p:last-child {
+        //   margin-top: auto;
+        //   text-decoration: underline;
+        //   .font-12;
+        //   display: flex;
+        //   justify-content: space-between;
 
-          >span:first-child {
-            >img {
-              height: 100%;
-            }
-          }
+        //   >span:first-child {
+        //     >img {
+        //       height: 100%;
+        //     }
+        //   }
 
-          >span:last-child {
-            width: 15px;
-            height: 12px;
-            display: inline-block;
+        //   >span:last-child {
+        //     width: 15px;
+        //     height: 12px;
+        //     display: inline-block;
 
-            >img {
-              height: 100%;
-            }
-          }
-        }
+        //     >img {
+        //       height: 100%;
+        //     }
+        //   }
+        // }
       }
     }
 
@@ -105,7 +106,7 @@
 
     >.school_list {
       margin-bottom: 16px;
-      border-bottom: 1px solid @colorF;
+      // border-bottom: 1px solid @colorF;
 
       >ul {
         >li {

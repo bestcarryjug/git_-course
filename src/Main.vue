@@ -2,7 +2,7 @@
   <div id="app">
     <van-row safe-area-inset-bottom>
       <transition :name="transitionName">
-        <router-view />
+        <router-view/>
       </transition>
     </van-row>
   </div>
@@ -27,6 +27,7 @@ export default {
             }
         }
     }
+
 };
 </script>
 <style lang="less" scoped>
@@ -36,6 +37,7 @@ export default {
   overflow: hidden;
   padding-bottom: 30px;
   height: 100%;
+  transition: all .2s;
 }
 /deep/.van-row {
   height: 100%;
@@ -45,8 +47,9 @@ export default {
 .slide-left-enter-active,
 .slide-left-leave-active {
   will-change: transform;
-  transition: all 500ms;
+  transition: opacity 400ms,transform 400ms;
   position: absolute;
+
 }
 .slide-right-enter {
   opacity: 0;

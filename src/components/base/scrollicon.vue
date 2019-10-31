@@ -109,9 +109,9 @@ export default {
   }
 }
 .scrollAnimation {
-  animation: 15s scroll linear infinite normal;
-  -moz-animation: 15s scroll linear infinite normal;
-  -o-animation: 15s scroll linear infinite normal;
-  -webkit-animation: 15s scroll linear infinite normal;
+  animation: 20s scroll linear infinite normal;
+  -moz-animation: 20s scroll linear infinite normal;
+  -o-animation: 20s scroll linear infinite normal;
+  -webkit-animation: 20s scroll linear infinite normal;
 }
 </style>

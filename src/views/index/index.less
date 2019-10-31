@@ -39,32 +39,34 @@
 
     .van-tabs--line .van-tabs__wrap {
       height: 42px;
-      padding: 0 9px;
+      padding: 0 16px;
       margin-bottom: 11px;
-
       .van-tab {
+        position: relative;
+        left: -10px;
         .font-14;
         color: @color9;
-        flex:none !important;
+        flex: none !important;
         padding: 0;
+
         >.van-ellipsis {
           line-height: 45px;
         }
-        >span{
+
+        >span {
           padding: 0 10px;
         }
 
       }
-      .van-tab:first-child{
-        padding-left:0;
-      }
+
       .van-tab--active {
         color: @colorRed;
         .font-17;
-        >span{
+
+        >span {
           white-space: wrap !important;
         }
-        
+
       }
     }
 
@@ -75,7 +77,7 @@
       border-radius: 2px;
     }
 
- 
+
 
     .van-tab__pane {
       >.sections {

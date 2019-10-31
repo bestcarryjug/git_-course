@@ -45,26 +45,26 @@
       .van-tab {
         .font-14;
         color: @color9;
-        flex-basis: 14.28% !important;
-        max-width: 100px;
-        width: auto;
+        flex:none !important;
+        padding: 0;
         >.van-ellipsis {
-          // position: absolute;
-          // top: 0;
-          // left: 0;
-          // right: 0;
-          // bottom: 0;
-          // margin: auto;
           line-height: 45px;
         }
         >span{
-          padding: 0;
+          padding: 0 10px;
         }
-      }
 
+      }
+      .van-tab:first-child{
+        padding-left:0;
+      }
       .van-tab--active {
         color: @colorRed;
         .font-17;
+        >span{
+          white-space: wrap !important;
+        }
+        
       }
     }
 

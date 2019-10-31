@@ -23,15 +23,13 @@ export default {
         this.getIcon();
     },
     mounted() {
-        this.$nextTick(() => {
-            let fn = () => {
-                const ul = this.$refs.scrollicon_ul;
-                const list = [...ul.childNodes];
-                ul.style.width = (list[0].offsetWidth * list.length) + 'px';
-                console.log(ul.offsetWidth)
-            }
-            setTimeout(fn, 0);
-        });
+        let fn = () => {
+            const ul = this.$refs.scrollicon_ul;
+            const list = [...ul.childNodes];
+            ul.style.width = list[0].offsetWidth * list.length + 'px';
+            console.log(ul.offsetWidth);
+        };
+        setTimeout(fn, 100);
     },
     methods: {
         getIcon() {
@@ -44,10 +42,13 @@ export default {
                 if (index % 2 !== 0) {
                     return true;
                 }
-                return this.appIcon.push([params[index].appIcon, params[index + 1].appIcon]);
+                return this.appIcon.push([
+                    params[index].appIcon,
+                    params[index + 1].appIcon
+                ]);
             });
             while (this.appIcon.length <= 10) {
-                this.appIcon = [...this.appIcon, ...this.appIcon]
+                this.appIcon = [...this.appIcon, ...this.appIcon];
             }
         }
     },
@@ -63,10 +64,10 @@ export default {
     display: flex;
     // width: auto;
     // justify-content: space-between;
-    animation:10s scroll linear infinite normal;
-    -moz-animation:10s  scroll linear infinite normal;
-    -o-animation:10s scroll linear infinite normal;
-    -webkit-animation: 10s  scroll linear infinite normal;
+    animation: 15s scroll linear infinite normal;
+    -moz-animation: 15s scroll linear infinite normal;
+    -o-animation: 15s scroll linear infinite normal;
+    -webkit-animation: 15s scroll linear infinite normal;
     > li {
       // display: flex;
       // flex-direction: column;
@@ -90,28 +91,28 @@ export default {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    -moz-transform:translateX(0);
-    -o-transform:translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -o-transform:translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
   }
 }
 @-webkit-keyframes scroll {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    -moz-transform:translateX(0);
-    -o-transform:translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -o-transform:translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
   }
 }
 </style>

@@ -7,7 +7,7 @@
           <p>以大数据智能化为引导的教育信息化行动计划全面实行</p> -->
         </section>
       </header>
-      <main class="titleAppaction_main" v-html='params.itemList[0].appDescription'>
+      <main class="titleAppaction_main" v-html='params.itemList[0].themeIntroduction'>
         <!-- <p class="font-17">
           8月19日消息，台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息
           ，台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息，

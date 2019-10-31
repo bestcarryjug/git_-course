@@ -1,6 +1,6 @@
 <template>
   <div class="scrollicon">
-    <ul class="scrollicon_ul" ref="scrollicon_ul" v-if="appIcon.length">
+    <ul class="scrollicon_ul" :class='{"scrollAnimation":animation}' ref="scrollicon_ul" v-if="appIcon.length">
       <li v-for="(item,index) in appIcon" :key="index">
         <div class="imgbox">
           <img :src="item[0]" alt />
@@ -16,7 +16,8 @@
 export default {
     data() {
         return {
-            appIcon: []
+            appIcon: [],
+            animation: false
         };
     },
     created() {
@@ -27,7 +28,7 @@ export default {
             const ul = this.$refs.scrollicon_ul;
             const list = [...ul.childNodes];
             ul.style.width = list[0].offsetWidth * list.length + 'px';
-            console.log(ul.offsetWidth);
+            this.animation = true
         };
         setTimeout(fn, 100);
     },
@@ -62,16 +63,8 @@ export default {
   > ul {
     height: 100%;
     display: flex;
-    // width: auto;
-    // justify-content: space-between;
-    animation: 15s scroll linear infinite normal;
-    -moz-animation: 15s scroll linear infinite normal;
-    -o-animation: 15s scroll linear infinite normal;
-    -webkit-animation: 15s scroll linear infinite normal;
+
     > li {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: space-between;
       flex: none;
       width: 74px;
       > .imgbox {
@@ -114,5 +107,11 @@ export default {
     -moz-transform: translateX(-50%);
     -o-transform: translateX(-50%);
   }
+}
+.scrollAnimation {
+  animation: 15s scroll linear infinite normal;
+  -moz-animation: 15s scroll linear infinite normal;
+  -o-animation: 15s scroll linear infinite normal;
+  -webkit-animation: 15s scroll linear infinite normal;
 }
 </style>

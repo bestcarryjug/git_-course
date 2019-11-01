@@ -13,7 +13,7 @@
           <div v-if='paramsyy.length'>
             <recommend v-for='(item,index) in paramsyy':params='item'></recommend>
           </div>
-          <div v-if='!paramsyy.length'>
+          <div v-if='paramsyy !=="changeTab" && !paramsyy.length'>
             <nodata></nodata>
           </div>
         </van-tab>

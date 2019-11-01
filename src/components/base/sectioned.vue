@@ -46,7 +46,7 @@ export default {
   .scopemix();
 }
 .sectionboder {
-  .scopemix(75px, 64px, @border, 8px, 6px);
+  .scopemix(@borde:@border);
 }
 .section38{
   .scopemix(38px,38px,none,0px,0px);

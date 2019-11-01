@@ -6,24 +6,9 @@
           class="titleAppaction_header_sec"
           :style='{"backgroundImage":`url(${params.bannerUrl})`}'
         >
-          <!-- <h3 class="font-20">以大数据智能化为引导的教育信息化</h3>
-          <p>以大数据智能化为引导的教育信息化行动计划全面实行</p>-->
         </section>
       </header>
       <main class="titleAppaction_main" v-html="params.itemList[0].themeIntroduction">
-        <!-- <p class="font-17">
-          8月19日消息，台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息
-          ，台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息，
-          台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息，台湾
-          地区《经济日报》报道，业界传出新首度支持。8月19日消息，台湾地区《
-          经济日报》报道，业界传出新首度支持。8月19日消息，台湾地区《经济日报》报
-          道，业界传出新首度支持。8月19日消息，台湾地区《经济日报》报道，业界传出新首
-          度支持。8月19日消息，台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息，台
-          湾地区《经济日报》报道，业界传出新首度支持。8月19日消息，台湾地区《经济日报》报道，
-          业界传出新首度支持。
-        </p>
-        <img src="../../assets/images/img1.jpg" alt />
-        <p class="font-17">8月19日消息，台湾地区《经济日报》报道，业界传出新首度支持。8月19日消息，台湾地区《经济日报》报道，业界传出新首度支持。</p>-->
       </main>
       <footer class="titleAppaction_footer">
         <div :class="`${positionName} transfromfooter`">

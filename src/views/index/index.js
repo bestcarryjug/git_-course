@@ -32,6 +32,7 @@ export default {
                 })
         },
         async changeTab (name) {
+            this.paramsyy = ''
             this.channelCode = this.params[name].channelCode
             const { data } = await this.getChannelDetail(this.channelCode);
             this.paramsyy = data

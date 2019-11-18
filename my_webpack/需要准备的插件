@@ -44,5 +44,10 @@ DefinePlugin
 
 
 //gzip压缩
-
 webpack-bundle-analyzer 打包分析
+
+//dll 开发环境提供一定的项目启动速度
+add-asset-html-webpack-plugin //dll件路径写入模板
+
+//缓存
+hard-source-webpack-plugin //进行缓存依赖包

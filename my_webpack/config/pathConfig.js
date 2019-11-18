@@ -1,6 +1,5 @@
 const path = require("path");
 const fs = require("fs");
-
 const appDirectory = fs.realpathSync(process.cwd()); // 获取当前根目录
 const resolvePath = (relativePath) => path.resolve(appDirectory, relativePath);
 
@@ -17,14 +16,14 @@ module.exports = {
      "@":  resolvePath('src'),
      'css':resolvePath('src/css')
   },
-  dllPlugin:{
+  dllPlugin:{ //dll静态资源缓存
     output:resolvePath('dll'),
-    manifestPath:resolvePath('dll/[name]-manifest.json'),
-    dllJs:(src)=>{
-      return resolvePath(`../dll/${src}.dll.js`)
-    },
-    manifestJson:(src)=>{
-      return resolvePath(`../dll/${src}-manifest.json`)
-    }
+    manifestPath:resolvePath('dll/json/[name]-manifest.json'),
+  },
+  dllJs:(src)=>{ //缓存包路径
+    return resolvePath(`dll/js/${src}.js`)
+  },
+  manifestJson:(src)=>{ //dll动态链接路径
+    return resolvePath(`dll/json/${src}-manifest.json`)
   }
 };

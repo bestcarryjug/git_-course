@@ -9,7 +9,9 @@ const {
 	cssTreeShaking,
 	alias
 } = require('./pathConfig')
-const baseUrl = require("./global")
+const {
+	basePath
+} = require("./global")
 const webpack = require('webpack')
 const HappyPack = require('happypack')
 //构造出一个共享进程池，在进程池中包含4个子进程
@@ -18,7 +20,12 @@ const happyThreadPool = HappyPack.ThreadPool({
 })
 const PurifyCSS = require('purifycss-webpack')
 const glob = require('glob-all')
-module.exports = environmental => {
+
+
+module.exports = ({
+	environmental,
+	mode
+}) => {
 	return {
 		entry: appIndexJs,
 		output: {
@@ -65,7 +72,7 @@ module.exports = environmental => {
 				filename: "[name]-[part].[ext]"
 			}),
 			new webpack.DefinePlugin({ //全局配置
-				'process.env.BASEURL': JSON.stringify(baseUrl[environmental])
+				'process.env.BASEURL': JSON.stringify(basePath[environmental])
 			}),
 			new HappyPack({
 				// 用唯一的标识符id，来代表当前的HappyPack是用来处理一类特定的文件
@@ -80,7 +87,7 @@ module.exports = environmental => {
 								"useBuiltIns": "usage"
 							},
 						],
-						"plugins": ["@babel/plugin-transform-runtime"]//封装babel辅助代码
+						"plugins": ["@babel/plugin-transform-runtime"] //封装babel辅助代码
 						// plugins: ['@babel/transform-runtime', 
 						// 	// ['import', {
 						// 	// 	'libraryName': 'vant',
@@ -91,10 +98,20 @@ module.exports = environmental => {
 					}
 				}]
 			}),
-			 // 清除无用 css
-			 new PurifyCSS({
+			new HappyPack({
+				id: "cssLoader",
+				threadPool: happyThreadPool,
+				loaders: [
+					"css-loader", // 编译css
+					"postcss-loader",
+					"less-loader"
+					// 编译less
+				]
+			}),
+			// 清除无用 css
+			new PurifyCSS({
 				paths: glob.sync(cssTreeShaking)
-			})
+			}),
 		],
 		devServer: {
 			port: 3000, //端口
@@ -105,20 +122,7 @@ module.exports = environmental => {
 		module: {
 			rules: [{
 					test: /\.(le|c)ss$/,
-					use: [
-						miniCssExtractPlugin.loader,
-						"css-loader", // 编译css
-						"less-loader", // 编译less
-						{
-							loader: "postcss-loader",
-							options: {
-								plugins: [
-									require("autoprefixer") /*在这里添加兼容前缀*/
-								]
-							}
-						}
-					]
-
+					use: [mode == 'production' ? miniCssExtractPlugin.loader : 'style-loader','happypack/loader?id=cssLoader']
 				}, {
 					test: /\.(png|jpg|jpeg|gif|svg)/,
 					loader: "url-loader",
@@ -128,20 +132,20 @@ module.exports = environmental => {
 						limit: 3072 // 小于3kb，进行base64转码
 					}
 				},
-				{
-					test: /\.(eot|woff2?|ttf)/, //引用字体配置
-					use: [{
-						loader: "url-loader",
-						options: {
-							name: "[name]-[hash:5].min.[ext]",
-							limit: 5000,// 小于3kb，进行base64转码
-							outputPath: "/fonts/"
-						}
-					}]
-				},
+				// {
+				// 	test: /\.(eot|woff2?|ttf)/, //引用字体配置
+				// 	use: [{
+				// 		loader: "url-loader",
+				// 		options: {
+				// 			name: "[name]-[hash:5].min.[ext]",
+				// 			limit: 5000, // 小于3kb，进行base64转码
+				// 			outputPath: "/fonts/"
+				// 		}
+				// 	}]
+				// },
 				{
 					test: /\.js$/, //babel处理js语法
-					exclude: /(node_modules|bower_components)/,
+					exclude: /node_modules/,
 					use: {
 						loader: 'happypack/loader?id=babel',
 					}
@@ -149,7 +153,7 @@ module.exports = environmental => {
 			]
 		},
 		resolve: { //别名配置
-			extensions: [".json", ".js",".vue"],
+			extensions: [".json", ".js", ".vue"],
 			alias
 		},
 	}

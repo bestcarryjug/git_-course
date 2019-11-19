@@ -47,8 +47,8 @@ module.exports = ({
 				}
 			}),
 			new miniCssExtractPlugin({ //css分离成单独文件
-				filename: "static/css/[name].[hash:7].css",
-				chunkFilename: "[id].css"
+				// filename: "static/css/[name].[hash:7].css",
+				chunkFilename: "static/css/[id].css"
 			}),
 			new OptimizeCSSAssetsPlugin({ //css压缩插件
 				assetNameRegExp: /\.css$/g,
@@ -80,22 +80,7 @@ module.exports = ({
 				// 如何处理.js文件，用法和Loader配置中一样
 				threadPool: happyThreadPool,
 				loaders: [{
-					path: 'babel-loader',
-					options: {
-						"presets": ["@babel/preset-env",
-							{
-								"useBuiltIns": "usage"
-							},
-						],
-						"plugins": ["@babel/plugin-transform-runtime"] //封装babel辅助代码
-						// plugins: ['@babel/transform-runtime', 
-						// 	// ['import', {
-						// 	// 	'libraryName': 'vant',
-						// 	// 	'libraryDirectory': 'es',
-						// 	// 	'style': true
-						// 	// }]
-						// ]
-					}
+					loader: 'babel-loader',
 				}]
 			}),
 			new HappyPack({
@@ -128,8 +113,9 @@ module.exports = ({
 					loader: "url-loader",
 					options: {
 						name: "[name]-[hash:5].[ext]",
-						outputPath: "/static/images/",
-						limit: 3072 // 小于3kb，进行base64转码
+						outputPath: mode === 'production'?"/static/images/":"images/",
+						limit: 3072, // 小于3kb，进行base64转码
+						publicPath: '../images',
 					}
 				},
 				// {
